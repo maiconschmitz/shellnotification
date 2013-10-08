@@ -1,5 +1,5 @@
 #!/bin/bash
-# Autor: Maicon Gabriel Schmitz <maiconschmitz@gmail.com?
+# Autor: Maicon Gabriel Schmitz <maiconschmitz@gmail.com>
 
 # Obtem o nome do Sistema Operacional
 os=`uname`
@@ -14,15 +14,12 @@ function enviarNotificacao {
 	# Caso esteja no OS X
 	if [ $os = "Darwin" ]
 	then
-
 		# Caso o Terminal Notifier esteja disponível
 		NOTIFIER=`which terminal-notifier`
 		if [ ! -z $NOTIFIER ]
 		then
-			echo $TITULO $MENSAGEM
 			$NOTIFIER -title "$TITULO" -message "$MENSAGEM"
 		else
-			echo "$NOTIFIER"
 			# Caso o Growl Notify esteja disponível
 			GROWL=`which growlnotify > /dev/null`
 			if [ ! -z $GROWL ]
@@ -32,7 +29,7 @@ function enviarNotificacao {
 		fi
 	fi
 
-	# Caso esteja no Linuc
+	# Caso esteja no Linux
 	if [ $os = "linux" ]
 	then
 		# Caso o Notify Send (Ubuntu) esteja disponível
@@ -53,16 +50,9 @@ function enviarNotificacao {
 
 # Os parâmetros esperados são: Título e Mensagem
 function notifica {
-
-	#if [ ! -z $2 ]
-	#then
-
+		
 	TITULO=$1;
 	MENSAGEM=$2;
 
 	enviarNotificacao $1 $2
-
-	#else
-	#	echo "Você deve especificar os parâmetros de Título e Mensagem!"
-	#fi
 }
