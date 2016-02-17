@@ -1,8 +1,8 @@
 #!/bin/bash
 # Autor: Maicon Gabriel Schmitz <maiconschmitz@gmail.com>
 
-# Carrega o Notifica
-source ../notifica.sh
+# Carrega o ShellNotify
+source ../shellnotify.sh
 
 # Dispara uma Notificação
-notifica "Informação" "Testando o Notifica"
+shellnotify "Informação" "Testando o ShellNotify"

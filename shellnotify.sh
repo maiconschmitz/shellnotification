@@ -49,10 +49,10 @@ function enviarNotificacao {
 }
 
 # Os parâmetros esperados são: Título e Mensagem
-function notifica {
+function shellnotify {
 		
 	TITULO=$1;
 	MENSAGEM=$2;
-
+	
 	enviarNotificacao $1 $2
 }
