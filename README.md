@@ -1,47 +1,51 @@
-ShellNotify
-#
+# ShellNotification
 
-O ShellNotify é um Wrapper para exibir Notificações no Desktop, a partir de Scripts Shell.
+O ShellNotification é um wrapper que tem como finalidade exibir Notificações no Desktop à partir do terminal, seja via execução direta na linha de comandou ou através de Shell script.
 
-O ShellNotify é compatível com os seguintes Ambiente:
--	Ubuntu (Unity)
--	KDE
--	OS X (Utilizando Growl ou a Central de Notificações, para a versão Mountain Lion ou mais atual).
+O ShellNotification é compatível tanto com Linux quanto com Mac OS X/macOS.
 
-OS X
-##
+Alguns ambientes em que ele foi testado:
+- Ubuntu (Unity)
+- KDE
+- Mac OS X/macOS
 
-Para que as Notificações via Shell possam ser exibidas no Desktop do OS X, é necessário utilizar o Growl ou a Central de Notificações, nativa a partir do Mountain Lion.
+Para o Mac OS X até a versão 10.7, é utilizando o **Growl**, enquanto que do Mac OS X Mountain Lion em diante, é utilizada a Central de Notificações.
 
-Instalando o Growl
-###
+## Linux
 
-Caso você possua uma versão mais antiga do OS X, pode optar por utilizar o Growl.
+Para exibir as Notificações via Shell no Linux, são testadas/utilizadas três alternativas: **notify-send**, **zenity** e **kdialog**.
 
+## Mac OS X/macOS
+
+Para exibir as Notificações via Shell no Desktop do OS X/macOS, é necessário utilizar o Growl ou a Central de Notificações, a qual é nativa à partir do Mac OS X Mountain Lion.
+
+
+### Instalando o Growl
+
+Caso você possua uma versão OS X igual ou anterior à versão 10.7, pode optar por utilizar o Growl.
+
+Para instalar o Growl, basta visitar a página de <a href="https://github.com/growl/growl/tree/master/Downloads" title="Download do Growl"> Download</a> e escolher a versão adequada.
+
+
+### Instalando o Terminal Notifier
+
+Possuindo o OS X Mountain Lion ou mais recente, você deve optar por utilizar a Central de Notificações.
+
+Você pode instalar o Terminal Notifier via [Homebrew](https://formulae.brew.sh/formula/terminal-notifier) ou através do [Ruby Gems](https://github.com/alloy/terminal-notifier/tree/master/Ruby).
+
+Instalação via **Homebrew**:
 ```
-Para instalar o Growl, basta visitar a página de <a href="http://growl.info/downloads" title="Download do Growl"> Download</a> e escolher a versão que se adeque às suas necessidades.
+brew install terminal-notifier
 ```
 
-Instalando o Terminal Notifier
-###
-
-Possuindo o OS X Mountain Lion ou mais recente, você pode optar por utilizar a própria Central de Notificações.
-
-Você pode instalar o wrapper via [Homebrew](https://github.com/Homebrew/homebrew):
+Instalação via **Ruby Gems**:
 ```
-$ brew install terminal-notifier
+sudo gem install terminal-notifier
 ```
 
-Ou, caso deseje utilizar o mesmo também via 
-[Ruby](https://github.com/alloy/terminal-notifier/tree/master/Ruby), efetue a instalação via RubyGems:
-```
-$ [sudo] gem install terminal-notifier
-```
 
-Exemplo de Uso:
-##
+## Exemplo de Uso:
 
-Para utilizar o ShellNotify, basta incluir o "shellnotify.sh" em seu script e efetuar a chamada da função shellnotify(), passando 2 argumentos.
-Os argumentos (parâmetros) são Título e Mensagem, respectivamente.
+Para utilizar o ShellNotification, basta incluir o "shellnotification.sh" em seu script e efetuar a chamada da função sendNotification(), passando como argumento a mensagem à ser exibida.
 
-Na pasta "exemplo", encontra-se o "testa.sh", que exemplifica a forma de uso.
+Na pasta "example", vocë encontra um exemplo de uso.
